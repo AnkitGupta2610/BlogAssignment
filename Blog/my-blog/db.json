@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "favourites": [],
+      "id": 1
+    }
+  ],
+  "blogs": [
+    {
+      "title": "AngularJS",
+      "description": "Angular is  framework for building client applications in HTML and either JavaScript or a language like TypeScript that compiles to JavaScript.",
+      "authorId": 2,
+      "categoryId": 1,
+      "date": "2017-11-17T10:41:41.773Z",
+      "id": 1
+    },
+    {
+      "title": "FacebookApp",
+      "description": "App to connect people and share their activities",
+      "authorId": 3,
+      "categoryId": 5,
+      "date": "17 August 2013",
+      "id": 3
+    },
+    {
+      "title": "t1",
+      "description": "you are management",
+      "authorId": 2,
+      "categoryId": 2,
+      "date": "2017-11-15T14:59:01.309Z",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "Technology",
+      "id": 1
+    },
+    {
+      "name": "Management",
+      "id": 2
+    },
+    {
+      "name": "Medical",
+      "id": 3
+    },
+    {
+      "name": "Cultural",
+      "id": 4
+    },
+    {
+      "name": "Social",
+      "id": 5
+    }
+  ]
+}

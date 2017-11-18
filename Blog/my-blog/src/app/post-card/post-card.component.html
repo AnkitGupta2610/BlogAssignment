@@ -1,0 +1,19 @@
+
+
+
+<div id="blog-card" class="well">
+  <div class="card">
+    <h4 class="card-title">{{blog.title}}
+      <a *ngIf="!showFav"><span class="pull-right glyphicon glyphicon-star-empty" (click)="setMarkFav(blog)"></span></a>
+      <a *ngIf="showFav"><span class="pull-right glyphicon glyphicon-star" (click)="setUnmarkFav(blog)"></span></a>
+    </h4>
+    <hr>
+    <div class="card-block">
+      <p class="card-text">{{blog.description}}</p>
+      <div *ngIf="showButtons">
+        <a class="btn btn-primary" data-toggle="modal" data-target="#myEdit" (click)="setUpdate(blog)">Edit</a>
+        <a class="btn btn-primary" (click)="setDelete(blog)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

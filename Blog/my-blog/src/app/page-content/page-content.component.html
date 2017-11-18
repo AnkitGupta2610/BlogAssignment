@@ -1,0 +1,14 @@
+<div id="login-header">
+
+  <div class="w3-container w3-teal">
+    <h1>{{heading}}</h1>
+  </div>
+
+  <div *ngFor="let blog of blogs">
+    <app-post-card [blog]="blog" [user]="user" (DeletePost)="getDelete($event)" (UpdatePost)="getUpdate($event)" (MarkFav)="getMarkFav($event)" (UnmarkFav)="getUnmarkFav($event)"></app-post-card>
+  </div>
+
+</div>
+
+
+

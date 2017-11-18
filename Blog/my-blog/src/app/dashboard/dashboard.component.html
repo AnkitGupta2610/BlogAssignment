@@ -1,0 +1,72 @@
+<app-login-bar></app-login-bar>
+<app-category-bar [categories]="categories" (Category)="getCategory($event)"></app-category-bar>
+<!-- Sidebar -->
+<app-side-bar (Home)="getHome($event)" (MyBlogs)="getMyBlogs($event)" (Favourites)="getFavourites($event)"></app-side-bar>
+
+<!-- Page Content -->
+<app-page-content [heading]="heading" [blogs]="filteredBlogs" [user]="user" (DeletePost)="deletePost($event)" (UpdatePost)="update($event)" (MarkFav)="markFav($event)" (UnMarkFav)="unmarkFav($event)"></app-page-content>
+
+<div class="modal fade" id="myAdd" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add New Blog</h4>
+      </div>
+      <div class="modal-body">
+        <input type="textbox" #addTitle placeholder="Enter Title"/>
+        <input type="textbox" #addDescription placeholder="Enter Description" />
+        <div class="container">
+          <select #addCategory class="selectpicker btn btn-info">
+            <option value="1">{{categories[0].name}}</option>
+            <option value="2">{{categories[1].name}}</option>
+            <option value="3">{{categories[2].name}}</option>
+            <option value="4">{{categories[3].name}}</option>
+            <option value="5">{{categories[4].name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" (click)="AddNew(addTitle.value,addDescription.value,addCategory.value)">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myEdit" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update Blog</h4>
+      </div>
+      <div class="modal-body">
+        <input type="textbox" #editTitle placeholder="Enter Title" [(ngModel)]="blogToBeUpdated.title"/>
+        <input type="textbox" #editDescription placeholder="Enter Description" [(ngModel)]="blogToBeUpdated.description"/>
+        <div class="container">
+          <select #editCategory class="selectpicker btn btn-info">
+            <option value="1">{{categories[0].name}}</option>
+            <option value="2">{{categories[1].name}}</option>
+            <option value="3">{{categories[2].name}}</option>
+            <option value="4">{{categories[3].name}}</option>
+            <option value="5">{{categories[4].name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" (click)="updatePost(editTitle.value,editDescription.value,editCategory.value)">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+<div class="row" id="category-names">
+  <div class="btn-toolbar">
+    <div *ngFor="let category of categories">
+      <input type="button" class="btn btn-link" value={{category.name}} (click)="setCategory(category)">
+    </div>
+  </div>
+</div>
